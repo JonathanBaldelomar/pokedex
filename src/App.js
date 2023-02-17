@@ -2,13 +2,15 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import Areachart from './components/showStats';
 import WeaknessF from './components/weakness';
+import MediaCard from './components/CustomCard';
+
 
 //import WeaknessF from './components/weakness';
 
 function App() {
   const pokeApiDomain = `https://pokeapi.co/api/v2/pokemon/`;
   const [currentId, setCurrentId] = useState(1);
-  const [pokemon, setPokemon] = useState({sprites:{}});
+  const [pokemon, setPokemon] = useState({sprites:{other:{"official-artwork":{}}}});
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(()=> {
@@ -57,7 +59,7 @@ function App() {
               </div>
               <hr></hr>
               {/* Ability container */}
-              <div>
+              {/* <div>
                 <h3> Abilities </h3>
                 <ul>{pokemon.abilities?.map(ab => {
                   return(
@@ -65,10 +67,10 @@ function App() {
                   )
                 }
                 )}</ul>
-              </div>
+              </div> */}
               <hr></hr>
               {/* Types container */}
-              <div>
+              {/* <div>
                 <h3> Types </h3>
                 <ul>{pokemon.types?.map(ty => {
                   return(
@@ -76,11 +78,15 @@ function App() {
                   )
                 }
                 )}</ul>
-              </div>
+              </div> */}
               <hr></hr>
               {/* Weakness container */}
-                <WeaknessF />
+                {/* <WeaknessF /> */}
               {/* <Areachart /> */}
+              {/* Card Media */}
+              <div>
+                <MediaCard logo={pokemon.sprites.front_default} image2={pokemon.sprites.other['official-artwork'].front_default} name={pokemon.name}/>
+              </div>
             </div>
           )
         }
