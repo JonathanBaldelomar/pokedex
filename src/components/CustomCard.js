@@ -8,7 +8,7 @@ export default function MediaCard({ image2, name, id, logo }) {
     <Card sx={{ maxWidth: 345, backgroundColor: 'green' }}>
         <CardHeader
             avatar={
-                <Avatar sx={{ bgcolor: 'withe', boxShadow: 5, padding: '5px', margin: '2px'}} aria-label="recipe" src={logo} >
+                <Avatar sx={{ bgcolor: 'white', boxShadow: 5, padding: '5px', margin: '2px'}} aria-label="recipe" src={logo} >
                 </Avatar>
             }
             titleTypographyProps={{variant:'h4', alig: 'left'}}
